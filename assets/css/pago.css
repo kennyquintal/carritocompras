@@ -1,3 +1,14 @@
+body {
+    margin: 0 auto;
+    align-items: center;
+}
+
 .navbar{
     background-color: #ffe600;
+}
+
+.main-container {
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
 }
