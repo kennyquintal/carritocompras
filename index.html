@@ -11,47 +11,43 @@
 </head>
 
 <body>
-
     <nav class="navbar">
-
         <div class="container">
-
             <a class="navbar-brand" href="#">
-
-                <img src="../carritocompras/assets/img/mercado-libre-logo.png" alt="Bootstrap" width="100">
-
+                <img src="../carritocompras/assets/img/logo.png" alt="Bootstrap" width="100">
             </a>
-
         </div>
         <button type="button" class="btn btn-light">
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill"
-                viewBox="0 0 16 16">
-
-                <path
-                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-
-            </svg>
+            <a href="../carritocompras/pages/lista-carritos.html"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-cart-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg></a>
 
         </button>
     </nav>
 
-
-
     <div class="container text-center">
         <div class="row align-items-start">
-            <div class="col-3">
+            <div class="col-2 tarjetas-margen">
                 <div class="card" style="width: 18rem;">
-                    <img src="../carritocompras/assets/img/images.jpg" class="card-img-top" alt="...">
+                    <img src="../carritocompras/assets/img/tenis1.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">EKIN Día de muertos.</h5>
-                        <p class="card-text">Air Jordan 1 Zomm Air 
-                            Confort "Día de muertos"
-                            Clazado para hombre
-                            1 Color 
-                            $4,500
+                        <p class="card-text">
+                        <ul>
+                            <dl> Air Jordan 1 Zomm Air</dl>
+                            <dl> Confort "Día de muertos"</dl>
+                            <dl> Clazado para hombre</dl>
+                            <dl> 1 Color</dl>
+                            <dl> $4,500</dl>
+                        </ul>
                         </p>
-                        <a href="#" class="btn btn-primary">Agregar</a>
+                        <button class="btn-incrementar" id='aumentar' onclick="aumentar()">+</button>
+                        <input type='text' id="cantidad" value="0">
+                        <button id='disminuir' onclick="disminuir()">-</button>
+                        <a href="#" class="btn btn-primary general">Agregar</a>
+
                         <select class="form-select general" aria-label="Default select example">
                             <option selected>Tallas</option>
                             <option value="1">25</option>
@@ -65,15 +61,26 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+
+
+            <div class="col-2 tarjetas-margen">
                 <div class="card" style="width: 18rem;">
-                    <img src="../carritocompras/assets/img/images.jpg" class="card-img-top" alt="...">
+                    <img src="../carritocompras/assets/img/tenis.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Agregar</a>
+                        <h5 class="card-title">EKIN Día de muertos</h5>
+                        <ul>
+                            <dl> Nike Air Force 1 '07 LX</dl>
+                            <dl> Confort "Día de muertos"</dl>
+                            <dl> Clazado para hombre</dl>
+                            <dl> 1 Color</dl>
+                            <dl> $2,699</dl>
+                        </ul>
+                        </p>
+                        <button class="btn-incrementar" id='aumentar' onclick="aumentar()">+</button>
+                        <input type='text' id="cantidad" value="0">
+                        <button id='disminuir' onclick="disminuir()">-</button>
+
+                        <a href="#" class="btn btn-primary general">Agregar</a>
 
                         <select class="form-select general" aria-label="Default select example">
                             <option selected>Tallas</option>
@@ -87,15 +94,24 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-2 tarjetas-margen">
                 <div class="card" style="width: 18rem;">
-                    <img src="../carritocompras/assets/img/images.jpg" class="card-img-top" alt="...">
+                    <img src="../carritocompras/assets/img/tenis3.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Agregar</a>
+                        <h5 class="card-title">EKIN Día de muertos.</h5>
+                        <ul>
+                            <dl>Nike Dunk High Pemium</dl>
+                            <dl> Confort "Día de muertos"</dl>
+                            <dl> Clazado para hombre</dl>
+                            <dl> 1 Color</dl>
+                            <dl> $3,299</dl>
+                        </ul>
+                        </p>
+                        <button class="btn-incrementar" id='aumentar' onclick="aumentar()">+</button>
+                        <input type='text' id="cantidad" value="0">
+                        <button id='disminuir' onclick="disminuir()">-</button>
+
+                        <a href="#" class="btn btn-primary general">Agregar</a>
                         <select class="form-select general" aria-label="Default select example">
                             <option selected>Tallas</option>
                             <option value="1">25</option>
@@ -107,15 +123,23 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-2 tarjetas-margen">
                 <div class="card" style="width: 18rem;">
-                    <img src="../carritocompras/assets/img/images.jpg" class="card-img-top" alt="...">
+                    <img src="../carritocompras/assets/img/tenis2.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary boton">Agregar</a>
+                        <h5 class="card-title">EKIN</h5>
+                        <ul>
+                            <dl> Air Jordan 1 Mid</dl>
+                            <dl> Clazado para hombre</dl>
+                            <dl> 1 Color</dl>
+                            <dl> $2,999</dl>
+                        </ul>
+                        </p>
+                        <button class="btn-incrementar" id='aumentar' onclick="aumentar()">+</button>
+                        <input type='text' id="cantidad" value="0">
+                        <button id='disminuir' onclick="disminuir()">-</button>
+
+                        <a href="#" class="btn btn-primary general">Agregar</a>
                         <select class="form-select general" aria-label="Default select example">
                             <option selected>Tallas</option>
                             <option value="1">25</option>
@@ -140,7 +164,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-
+    <script src="../carritocompras/assets/js/aumento.js"></script>
 
 </body>
 
