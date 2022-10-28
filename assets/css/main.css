@@ -1,7 +1,6 @@
 .navbar{
     background-color: #ffe600;
 }
-
 .tabla-principal {
     display: table;
 }
@@ -10,4 +9,12 @@
 }
 .general{
     margin: 10px 5px;
+}
+.tarjetas-margen{
+    margin: 2rem;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+}
+.btn-incrementar{
+    margin: 2px 2.5px;
 }
