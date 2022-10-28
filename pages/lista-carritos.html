@@ -7,6 +7,7 @@
     <title>Información del carrito</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/lista-carritos.css">
+    <link rel="shortcut icon" href="../assets/img/logo-removebg-preview.png" type="image/x-icon">
 </head>
 <body>
     <!--IMPLEMENTACION DEL NAVBAR-->
@@ -50,14 +51,14 @@
                 <div>
                       <div class="col-auto">
                         <label for="inputPassword2" class="visually-hidden">Password</label>
-                        <input type="number" class="form-control" id="inputPassword2" placeholder="Cantidad">
+                        <input type="number" id="txt-cantidad" class="form-control" id="inputPassword2" placeholder="Cantidad">
                       </div>
                       <div class="col-auto">
                         <p class="card-text"><small class="text-muted">Quedan 5 piezas</small></p>
                         <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">-->
                       </div>
                       <div class="col-auto">
-                        <p class="card-text"><strong>24,000.00</strong></p>
+                        <p  class="card-text"><strong id="lb-precion-unitario">24000</strong></p>
                       </div>
                 </div>
             </div>
@@ -69,7 +70,7 @@
                     </p>
                 </div>
                 <div class="col-1">
-                    <p class="text-center">125.00</p>
+                    <p id="lb-envio" class="text-center">125</p>
                 </div>
             </div>
         </div>
@@ -81,7 +82,7 @@
                   </p>
               </div>
               <div class="col-1">
-                  <p class="text-center">24,125.00</p>
+                  <p id="lb-total" class="text-center"></p>
               </div>
           </div>
       </div>
@@ -96,8 +97,8 @@
   </div>
 </div>
 
-
-      <script src="../assets/js/bootstrap.min.js"></script>
-      <script src="../assets/js/popper.min.js"></script>   
+<script src="../assets/js/lista-carritos.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/popper.min.js"></script>    
 </body>
 </html>

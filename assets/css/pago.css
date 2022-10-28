@@ -1,3 +1,23 @@
+body {
+    margin: 0 auto;
+    align-items: center;
+}
+
 .navbar{
     background-color: #ffe600;
+}
+
+.main-container {
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 800px;
+}
+
+.accordion {
+    width: 800px;
+}
+
+.efectivo {
+    color: green;
 }
