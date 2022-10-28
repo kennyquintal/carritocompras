@@ -1,0 +1,13 @@
+.navbar{
+    background-color: #ffe600;
+}
+
+.tabla-principal {
+    display: table;
+}
+.columnas {
+    display: table-column;
+}
+.general{
+    margin: 10px 5px;
+}
