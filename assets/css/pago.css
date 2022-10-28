@@ -8,7 +8,16 @@ body {
 }
 
 .main-container {
-    display: flex;
-    width: 800px;
+    align-items: center;
     margin: 0 auto;
+    margin-top: 15px;
+    width: 800px;
+}
+
+.accordion {
+    width: 800px;
+}
+
+.efectivo {
+    color: green;
 }

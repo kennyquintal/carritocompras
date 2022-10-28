@@ -11,7 +11,7 @@
   </head>
 
   <body>
-
+    
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="container">
@@ -28,57 +28,124 @@
 
     <!-- END NAVBAR -->
 
+    <div class="container"> 
     <main class="main-container">
-        <section class="">
-          <form class="row g-3">
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword4">
-            </div>
+
+    <!-- Acordion Opciones -->
+    <div class="accordion" id="accordionFlushExample">
+
+      <!-- Acordion 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Dirección Envío
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <!-- FORM DIRECCIÓN -->
+            <section>
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputName4" class="form-label">Nombre(s)</label>
+                  <input type="text" class="form-control" id="inputName4" placeholder="Escriba su nombre(s)">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputLastName4" class="form-label">Apellidos</label>
+                  <input type="text" class="form-control" id="inputLastName4" placeholder="Escriba sus apellidos">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese su domicilio">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">Estado</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Selecciona una opción</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="inputZip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="inputZip">
+                </div>
+                <div class="col-12">              
+                    <button type="submit" class="btn btn-primary">Guardar</button>                  
+                </div>
+              </form>
+            </section>
+            <!-- END FORM DIRECCIÓN -->
+          </div>
+        </div>
+      </div>
+      <!-- Fin Acordion 1 -->
+
+      <!-- Acordion 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Confirmar Dirección y Pago
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <section>
+            <form class="row g-3">
             <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-12">
-              <label for="inputAddress2" class="form-label">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-md-6">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-              <label for="inputState" class="form-label">State</label>
-              <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <label for="inputZip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
+              <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"  value="Roger Kenneth Quintal Ojeda">
+                <label for="floatingPlaintextInput">Nombre</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"  value="Calle 15b">
+                <label for="floatingPlaintextInput">Dirección</label>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <span style="font-weight:bold">Método de Pago</span> <br>
+                  <span style="font-weight:bold" class="efectivo">Efectivo</span>
+                </div>
+              </div>
+              <br>
+              <div class="col-12">
+                <a href="#"><button type="submit" class="btn btn-primary">Confirmar Orden</button></a>
               </div>
             </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-          </form>
-        </section>
+            </form>
+           </section>
+          </div>
+        </div>
+      </div>
+      <!-- Fin Acordion 2 -->
 
-    </main>
-    
+      <!-- Acordion 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Orden de Compra
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+
+          </div>
+        </div>
+      </div>
+      <!-- Fin Acordion 3 -->
     </div>
+    <!-- Fin Acordion Opciones -->
+    
+    </main>
+    </div>
+  
     
 
 
