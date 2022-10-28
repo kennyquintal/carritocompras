@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del carrito</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/lista-carritos.css">
+</head>
+<body>
+    <!--IMPLEMENTACION DEL NAVBAR-->
+    <nav class="navbar">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="../assets/img/logo-removebg-preview.png" alt="Bootstrap" width="100">
+          </a>
+          <button type="button" class="btn btn-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+          </button>
+        </div>
+    </nav>
+    <div class="container-fluid contenedor">
+        <div class="carrito-compras">
+            <h3>Carrito de compras</h3>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="../assets/img/Telefonodefichas.jpg" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Teléfono</h5>
+                          <p class="card-text">Se puede montar en la pared.
+                            Tamaño: 18,25 (alto) x 9 (ancho) x 6,5 pulgadas (diámetro).
+                            Se muestra en color rojo.
+                            Importado.</p>
+                          <button class="btn btn-danger">Eliminar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-6">
+                <div>
+                      <div class="col-auto">
+                        <label for="inputPassword2" class="visually-hidden">Password</label>
+                        <input type="number" class="form-control" id="inputPassword2" placeholder="Cantidad">
+                      </div>
+                      <div class="col-auto">
+                        <p class="card-text"><small class="text-muted">Quedan 5 piezas</small></p>
+                        <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">-->
+                      </div>
+                      <div class="col-auto">
+                        <p class="card-text"><strong>24,000.00</strong></p>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-11">
+                    <p ><h5 class="text-end">Envío:</h5>
+                    </p>
+                </div>
+                <div class="col-1">
+                    <p class="text-center">125.00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+          <div class="row align-items-end">
+              <div class="col-11">
+                  <p ><h4 class="text-end">Total:</h4>
+                  </p>
+              </div>
+              <div class="col-1">
+                  <p class="text-center">24,125.00</p>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row text-end">
+          <div class="col-12">
+            <button class="btn btn-success">Continuar compra</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+      <script src="../assets/js/bootstrap.min.js"></script>
+      <script src="../assets/js/popper.min.js"></script>   
+</body>
+</html>
