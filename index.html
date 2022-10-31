@@ -14,18 +14,21 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
-            <img src="../carritocompras/assets/img/logo-removebg-preview.png" alt="logo-ekin" width="100">
-          </a>
-          <button type="button" class="btn btn-light">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg>
-          </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="../carritocompras/assets/img/logo-removebg-preview.png" alt="logo-ekin" width="100">
+            </a>
+            <button type="button" class="btn btn-light">
+                <a href="../carritocompras/pages/lista-carritos.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg></a>
+
+            </button>
         </div>
-      </nav>
-  
-      <!-- END NAVBAR -->
+    </nav>
+
+    <!-- END NAVBAR -->
 
     <div class="container text-center">
         <div class="row align-items-start">
@@ -38,13 +41,13 @@
                         <ul>
                             <dl> Air Jordan 1 Zomm Air</dl>
                             <dl> Confort "Día de muertos"</dl>
-                            <dl> Clazado para hombre</dl>
+                            <dl> Calzado para hombre</dl>
                             <dl> 1 Color</dl>
                             <dl> $4,500</dl>
                         </ul>
                         </p>
                         <button class="btn-incrementar" id='aumentar' onclick="aumentar()">+</button>
-                        <input type='text' id="cantidad" value="0">
+                        <input type='number' id="cantidad" min="0" value="0">
                         <button id='disminuir' onclick="disminuir()">-</button>
                         <a href="#" class="btn btn-primary general">Agregar</a>
 
@@ -71,14 +74,14 @@
                         <ul>
                             <dl> Nike Air Force 1 '07 LX</dl>
                             <dl> Confort "Día de muertos"</dl>
-                            <dl> Clazado para hombre</dl>
+                            <dl> Calzado para hombre</dl>
                             <dl> 1 Color</dl>
                             <dl> $2,699</dl>
                         </ul>
                         </p>
-                        <button class="btn-incrementar" id='aumentar' onclick="aumentar()">+</button>
-                        <input type='text' id="cantidad" value="0">
-                        <button id='disminuir' onclick="disminuir()">-</button>
+                        <button class="btn-incrementar" id='agregar' onclick="agregar()">+</button>
+                        <input type='number' id="pieza" min="0" value="0">
+                        <button id='quitar' onclick="quitar()">-</button>
 
                         <a href="#" class="btn btn-primary general">Agregar</a>
 
@@ -102,14 +105,14 @@
                         <ul>
                             <dl>Nike Dunk High Pemium</dl>
                             <dl> Confort "Día de muertos"</dl>
-                            <dl> Clazado para hombre</dl>
+                            <dl> Calzado para hombre</dl>
                             <dl> 1 Color</dl>
                             <dl> $3,299</dl>
                         </ul>
                         </p>
-                        <button class="btn-incrementar" id='aumentar' onclick="aumentar()">+</button>
-                        <input type='text' id="cantidad" value="0">
-                        <button id='disminuir' onclick="disminuir()">-</button>
+                        <button class="btn-incrementar" id='aumenta' onclick="aumenta()">+</button>
+                        <input type='number' id="producto" min="0" value="0">
+                        <button id='baja' onclick="baja()">-</button>
 
                         <a href="#" class="btn btn-primary general">Agregar</a>
                         <select class="form-select general" aria-label="Default select example">
@@ -130,14 +133,14 @@
                         <h5 class="card-title">EKIN</h5>
                         <ul>
                             <dl> Air Jordan 1 Mid</dl>
-                            <dl> Clazado para hombre</dl>
+                            <dl> Calzado para hombre</dl>
                             <dl> 1 Color</dl>
                             <dl> $2,999</dl>
                         </ul>
                         </p>
-                        <button class="btn-incrementar" id='aumentar' onclick="aumentar()">+</button>
-                        <input type='text' id="cantidad" value="0">
-                        <button id='disminuir' onclick="disminuir()">-</button>
+                        <button class="btn-incrementar" id='subir' onclick="subir()">+</button>
+                        <input type='number' id="articulo" min="0" value="0" >
+                        <button id='bajar' onclick="bajar()">-</button>
 
                         <a href="#" class="btn btn-primary general">Agregar</a>
                         <select class="form-select general" aria-label="Default select example">
