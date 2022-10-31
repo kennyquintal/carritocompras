@@ -26,10 +26,8 @@ function printStates(){
 }
 
 let selectIdStates = document.getElementById("inputState");
-
 selectIdStates.onchange = function(){
    var ciudad = json[selectIdStates.value];
-   console.log(selectIdStates.value);
    cleanCity()
    printCity(ciudad);
 }
