@@ -4,6 +4,8 @@ body.onload = function() {
    printStates();
 }
 
+
+// Consulta JSON y trae los estados por propiedades
 function printStates(){
    fetch('../assets/json/estados-municipios.json')
    .then(function(resp){return resp.json()})
@@ -25,6 +27,7 @@ function printStates(){
    });   
 }
 
+// Funcion para cargar el select y limpiarlo
 let selectIdStates = document.getElementById("inputState");
 selectIdStates.onchange = function(){
    var ciudad = json[selectIdStates.value];
@@ -32,6 +35,7 @@ selectIdStates.onchange = function(){
    printCity(ciudad);
 }
 
+// Imprime las ciudades y genera las opciones del select
 function printCity(ciudad){
       let selectIdCity = document.getElementById("inputCity");
       for(var i = 0; i < ciudad.length; i++) {
@@ -43,6 +47,7 @@ function printCity(ciudad){
       }  
 }
 
+// funcion para limpiar el formulario de ciudades
 function cleanCity(){
    let selectIdCity = document.getElementById("inputCity");
    selectIdCity.innerHTML = "";
