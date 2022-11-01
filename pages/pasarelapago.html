@@ -45,40 +45,48 @@
           <div class="accordion-body">
             <!-- FORM DIRECCIÓN -->
             <section>
-              <form class="row g-3">
+              <form class="row g-3 needs-validation">
                 <div class="col-md-7">
                   <label for="inputName4" class="form-label">Nombre(s)</label>
-                  <input type="text" class="form-control" id="inputName4" placeholder="Escriba su nombre(s)">
+                  <input type="text" class="form-control" id="inputName4" placeholder="Escriba su nombre(s)" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
                 </div>
                 <div class="col-md-5">
                   <label for="inputCellPhone" class="form-label">Celular</label>
-                  <input type="text" class="form-control" id="inputCellPhone" placeholder="Escriba su teléfono celular">
+                  <input type="text" class="form-control" id="inputCellPhone" placeholder="Escriba su teléfono celular" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputLastName1" class="form-label">Primer Apellido</label>
-                  <input type="text" class="form-control" id="inputLastName1" placeholder="Escriba su primer apellido">
+                  <input type="text" class="form-control" id="inputLastName1" placeholder="Escriba su primer apellido" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputLastName2" class="form-label">Segundo Apellido</label>
-                  <input type="text" class="form-control" id="inputLastName2" placeholder="Escriba su segundo apellido">
+                  <input type="text" class="form-control" id="inputLastName2" placeholder="Escriba su segundo apellido" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico" required>
+                  <div id="emailHelp" class="form-text">No compartimos sus datos personales con nadie más.</div>
                 </div>
                 <div class="col-12">
                   <label for="inputAddress" class="form-label">Dirección Domiciliar</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese su domicilio">
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese su domicilio" required>
                 </div>
                 <div class="col-md-4">
                   <label for="inputState" class="form-label">Estado</label>
-                  <select id="inputState" class="form-select">
+                  <select id="inputState" class="form-select" required>
                   </select>
                 </div>
                 <div class="col-md-6">
                   <label for="inputCity" class="form-label">Ciudad</label>
-                  <select id="inputCity" class="form-select">
+                  <select id="inputCity" class="form-select" required>
                   </select>
                 </div>
                 <div class="col-md-2">
                   <label for="inputCP" class="form-label">Código Postal</label>
-                  <input type="text" class="form-control" id="inputCP">
+                  <input type="text" class="form-control" id="inputCP" required>
                 </div>
                 <div class="col-12">              
                     <button type="submit" class="btn btn-primary">Guardar</button>                  
