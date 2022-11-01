@@ -1,14 +1,21 @@
-var json = {};
-let body = document.querySelector('body');
-body.onload = function() {
-   consumeAPI();
+//consultaProductos();
+//consultaUsuarios();
+//consultaCarrito();
+
+function consultaProductos(){
+    fetch('http://10.60.63.90:4000/api/Products/')
+    .then(response => response.json()) //convierte a json
+    .then(json => console.log(json))
+ }
+
+ function consultaUsuarios(){
+   fetch('http://10.60.63.90:4000/api/Users/')
+   .then(response => response.json()) //convierte a json
+   .then(json => console.log(json))
 }
 
-function consumeAPI(){
-    fetch('http://10.99.99.114:4000/api/Products/')
-    .then(function(resp){return resp.json()})
-    .then(function(data){
-       json = data;
-       console.log(json);
-    });   
- }
+function consultaCarrito(){
+   fetch('http://10.60.63.90:4000/api/carrito/1')
+   .then(response => response.json()) //convierte a json
+   .then(json => console.log(json))
+}
