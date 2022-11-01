@@ -1,3 +1,10 @@
+
+let body = document.querySelector('body')
+body.onload = function () {
+     consultaProductos()
+
+}
+
 var inicio = 0; //se inicializa una variable en 0
 
 function aumentar() {
@@ -8,9 +15,7 @@ function aumentar() {
 }
 
 function disminuir() {
-
      var cantidad = document.getElementById('cantidad');
-
      if (inicio < 0) {
           alert("No se puede tener stock negativa");
           cantidad.value = 0;
@@ -19,10 +24,6 @@ function disminuir() {
           cantidad.value = inicio--;
      }
 }
-
-
-
-
 
 //Segunda tarjeta
 var principal = 0; //se inicializa una variable en 0
@@ -34,11 +35,9 @@ function agregar() {
      //se obtiene el valor del input, y se incrementa en 1 el valor que tenga.
 }
 
-
 function quitar() {
 
      var pieza = document.getElementById('pieza');
-
      if (principal < 0) {
           alert("No se puede tener stock negativa");
           pieza.value = 0;
@@ -56,16 +55,13 @@ var inicial = 0; //se inicializa una variable en 0
 
 function aumenta() {
      // se crean la funcion y se agrega al evento onclick en en la etiqueta button con id aumentar
-
      var cantidad = document.getElementById('producto').value = ++inicial;
      //se obtiene el valor del input, y se incrementa en 1 el valor que tenga.
 }
 
 
 function baja() {
-
      var producto = document.getElementById('producto');
-
      if (inicial < 0) {
           alert("No se puede tener stock negativa");
           producto.value = 0;
@@ -89,7 +85,6 @@ function subir() {
      //se obtiene el valor del input, y se incrementa en 1 el valor que tenga.
 }
 function bajar() {
-
      var articulo = document.getElementById('articulo');
 
      if (principio < 0) {
@@ -100,6 +95,18 @@ function bajar() {
           articulo.value = principio--;
      }
 }
+
+
+//// Consumir la Api de productos
+function consultaProductos() {
+     fetch('http://10.60.63.90:4000/api/Products/')//// exito
+          .then(response => response.json())/// convertir json
+          .then(data => console.log(data)); /// imprimir los datos  en ela consola
+          
+
+}
+
+
 
 
 
