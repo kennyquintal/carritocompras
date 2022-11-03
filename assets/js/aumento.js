@@ -1,21 +1,39 @@
 
 $(document).ready(function (e) {
      productos()
+     mostrarDatos()
+     //eliminarStorage()
+     let datos = []
      $(document).on('click','.agregar',(e)=>{
           //accedemos al padre de todos los elementos con jquery
           let padre = $(this)[0].activeElement.parentElement
-          let modeloProducto = padre.children[0].innerHTML
-          let descripcionProducto = padre.children[2].children[0].innerHTML
-          let precioProducto = padre.children[2].children[1].innerHTML
-          let cantidadProducto = padre.children[3].value
-          let talla = padre.children[4].value
-
+          let modeloProducto = padre.children[1].innerHTML
+          let idProducto = padre.children[0].innerHTML
+          let descripcionProducto = padre.children[3].children[0].innerHTML
+          let precioProducto = padre.children[3].children[1].innerHTML
+          let cantidadProducto = padre.children[4].value
+          let talla = padre.children[5].value
+          
+          console.log(idProducto)
           console.log(modeloProducto)
           console.log(cantidadProducto)
           console.log(precioProducto)
           console.log(descripcionProducto)
           console.log(talla)
+
+          let producto = JSON.stringify({
+               ID    : idProducto,
+               Cantidad : cantidadProducto,
+               Descripcion  : descripcionProducto,
+               Modelo : modeloProducto,
+               precio : precioProducto,
+               talla: talla
+       })
+       datos.push(producto)
+       console.log(JSON.parse("["+datos+"]"))
+       localStorage.setItem("producto",datos)
      })
+     //localStorage.setItem("producto",x)
 })
 
 function productos() {
@@ -36,7 +54,7 @@ function productos() {
                <div class="card" style="width: 18rem;">
                    <img src="/assets/img/tenis1.png" class="card-img-top" alt="...">
                    <div class="card-body">
-
+                       <p hidden>${datos.idProducto}</p>
                        <h5 class="card-title">${datos.Modelo}</h5>
                        <p class="card-text">
                        <ul>
@@ -64,4 +82,11 @@ function productos() {
           //
           $("#contenedor-productos").html(plantilla)
      })
+}
+
+function mostrarDatos() {
+     console.log(JSON.parse("["+localStorage.getItem("producto")+"]"))
+}
+function eliminarStorage() {
+     localStorage.clear()
 }
