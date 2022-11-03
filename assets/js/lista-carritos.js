@@ -1,10 +1,8 @@
 let body = document.querySelector('body')
 body.onload = function () {
-    fetch('http://10.99.99.92:5500/assets/json/estados-municipios.json')
-    .then(function (respuesta) {return respuesta.json()})
-    .then(function (data) {
-        console.log(data)
-    })
+    agregarProductos()
+    mostrarProductosStorage()
+    //localStorage.clear()
 }
 /**
  * Evento de teclado en el campo donde va la cantidad de productos a elegir
@@ -31,35 +29,56 @@ txtCantida.forEach(inputsText =>{
             console.log(total - calcularTotal(parseInt(cantidad),parseInt(lbPrecioUnitario),parseInt(lbEnvio )))
             lbTotal.innerText = total
         }
-
-            
-        //console.log(inputsText.parentElement)
-        //obtener un valor de un tag en html
-        //let lbPrecioUnitario = document.getElementById("lb-precion-unitario").innerHTML
-        //let lbEnvio = document.getElementById("lb-envio").innerHTML
-        //let lbTotal = document.getElementById("lb-total")
-        //console.log(lbEnvio)
-        /*if (!cantidad=="") {
-            let total = calcularTotal(parseInt(cantidad),parseInt(lbPrecioUnitario),parseInt(lbEnvio ))
-            lbTotal.innerText = total
-        } else{
-            lbTotal.innerText = ""
-        }*/
     })
 })
-/*txtCantida.onkeyup = (e)=> {
-    let cantidad = txtCantida.value
-    //obtener un valor de un tag en html
-    let lbPrecioUnitario = document.getElementById("lb-precion-unitario").innerHTML
-    let lbEnvio = document.getElementById("lb-envio").innerHTML
-    let lbTotal = document.getElementById("lb-total")
-    if (!cantidad=="") {
-        let total = calcularTotal(parseInt(cantidad),parseInt(lbPrecioUnitario),parseInt(lbEnvio ))
-        lbTotal.innerText = total
-    } else{
-        lbTotal.innerText = ""
+
+function agregarProductos() {
+    //let productos = localStorage.getItem("productos")
+    //productos = JSON.parse(producto)
+    let producto = JSON.stringify({
+            ID    : "1234",
+            Cantidad : "2",
+			Descripcion  : "Tenis para mujer" ,
+			Modelo : "Nike 2.0" ,
+			cantidad : "1200"
+    })
+
+     let producto2 = JSON.stringify([
+        { ID    : "1234",
+        Cantidad : "2",
+        Descripcion  : "Tenis para mujer" ,
+        Modelo : "Nike 2.0" ,
+        cantidad : "1200"},{
+            ID    : "1234",
+            Cantidad : "2",
+			Descripcion  : "Tenis para mujer" ,
+			Modelo : "Nike 2.0" ,
+			cantidad : "1200"
+        },{
+            ID    : "1234",
+            Cantidad : "2",
+			Descripcion  : "Tenis para mujer" ,
+			Modelo : "Nike 2.0" ,
+			cantidad : "1200"
+        }
+    ])
+    
+    let x =[]
+    for (let i = 0; i < 5; i++) {
+       x.push(producto)
     }
-}*/
+    //console.log(x)
+        //producto
+        localStorage.setItem("producto",x)
+        //localStorage.setItem("productos", producto2)
+
+}
+function mostrarProductosStorage() {
+    //console.log(JSON.parse(localStorage.getItem("productos")))
+    console.log(localStorage.getItem("producto"))
+    console.log(JSON.parse("["+localStorage.getItem("producto")+"]"))
+}
+
 
 /**
  * 
