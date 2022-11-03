@@ -4,6 +4,9 @@ body.onload = function () {
     mostrarProductosStorage()
     //localStorage.clear()
 }
+
+
+
 /**
  * Evento de teclado en el campo donde va la cantidad de productos a elegir
  */
@@ -35,47 +38,54 @@ txtCantida.forEach(inputsText =>{
 function agregarProductos() {
     //let productos = localStorage.getItem("productos")
     //productos = JSON.parse(producto)
-    let producto = JSON.stringify({
-            ID    : "1234",
-            Cantidad : "2",
-			Descripcion  : "Tenis para mujer" ,
-			Modelo : "Nike 2.0" ,
-			cantidad : "1200"
-    })
-
-     let producto2 = JSON.stringify([
-        { ID    : "1234",
-        Cantidad : "2",
-        Descripcion  : "Tenis para mujer" ,
-        Modelo : "Nike 2.0" ,
-        cantidad : "1200"},{
-            ID    : "1234",
-            Cantidad : "2",
-			Descripcion  : "Tenis para mujer" ,
-			Modelo : "Nike 2.0" ,
-			cantidad : "1200"
-        },{
-            ID    : "1234",
-            Cantidad : "2",
-			Descripcion  : "Tenis para mujer" ,
-			Modelo : "Nike 2.0" ,
-			cantidad : "1200"
-        }
-    ])
-    
-    let x =[]
-    for (let i = 0; i < 5; i++) {
-       x.push(producto)
-    }
-    //console.log(x)
-        //producto
-        localStorage.setItem("producto",x)
-        //localStorage.setItem("productos", producto2)
-
+    let contenedorCarrito = document.getElementById('contenedor-carrito')
+    let datos = JSON.parse("["+localStorage.getItem("producto")+"]")
+   /**  for (let i = 0; i < localStorage.length; i++) {
+        console.log(datos)
+    }*/
+    let plantilla =""
+    datos.forEach(productos => {
+       // console.log(element.ID)
+       plantilla += `
+       <div class="row">
+       <div class="col-6">
+           <div class="card mb-3" style="max-width: 540px;">
+               <div class="row g-0">
+                 <div class="col-md-4">
+                   <img src="../assets/img/tenis1.png" class="img-fluid rounded-start" alt="...">
+                 </div>
+                 <div class="col-md-8">
+                   <div class="card-body">
+                     <h5 class="card-title">${productos.Modelo}</h5>
+                     <p class="card-text">${productos.Descripcion}</p>
+                     <button class="btn btn-danger">Eliminar</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+       </div>
+       <div class="col-6">
+           <div>
+                 <div class="col-auto">
+                   <label for="inputPassword2" class="visually-hidden">Password</label>
+                   <input type="number" id="txt-cantidad" class="form-control" id="inputPassword2" placeholder="Cantidad" value ="${productos.Cantidad}">
+                 </div>
+                 <div class="col-auto">
+                   <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">-->
+                 </div>
+                 <div class="col-auto">
+                   <p  class="card-text"><strong id="lb-precion-unitario">${productos.precio}</strong></p>
+                 </div>
+           </div>
+       </div>
+   </div>
+       `
+    });
+ contenedorCarrito.innerHTML = plantilla
 }
 function mostrarProductosStorage() {
     //console.log(JSON.parse(localStorage.getItem("productos")))
-    console.log(localStorage.getItem("producto"))
+    //console.log(localStorage.getItem("producto"))
     console.log(JSON.parse("["+localStorage.getItem("producto")+"]"))
 }
 
