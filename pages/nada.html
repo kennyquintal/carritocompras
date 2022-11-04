@@ -10,19 +10,73 @@
 
     <input type="number" min="1" max="30" minlength="1" maxlength="2" id="datos">
     <button type="submit" id="enviar" >enviar</button>
+
+    <form id="clienteForm" class="row g-3 needs-validation">
+        <div class="col-md-7">
+          <label for="inputName4" class="form-label">Nombre(s)</label>
+          <input type="text" class="form-control" name="Nombres" id="inputName4" placeholder="Escriba su nombre(s)" >
+        </div>
+        <div class="col-md-5">
+          <label for="inputCellPhone" class="form-label">Celular</label>
+          <input type="text" class="form-control" name="Celular" id="inputCellPhone" placeholder="Escriba su teléfono celular" >
+        </div>
+        <div class="col-md-6">
+          <label for="inputLastName1" class="form-label">Primer Apellido</label>
+          <input type="text" class="form-control" name="ApellidoP" id="inputLastName1" placeholder="Escriba su primer apellido" >
+        </div>
+        <div class="col-md-6">
+          <label for="inputLastName2" class="form-label">Segundo Apellido</label>
+          <input type="text" class="form-control" name="ApellidoM" id="inputLastName2" placeholder="Escriba su segundo apellido" >
+        </div>
+        <div class="col-md-6">
+          <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" name="Correo" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico" >
+          <div id="emailHelp" class="form-text">No compartimos sus datos personales con nadie más.</div>
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Dirección de Domicilio</label>
+          <input type="text" class="form-control" name="Direccion" id="inputAddress" placeholder="Ingrese su domicilio" >
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">Estado</label>
+          <select id="inputState" name="Estado" class="form-select" >
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">Ciudad</label>
+          <select id="inputCity" name="Ciudad" class="form-select" >
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="inputCP" class="form-label">Código Postal</label>
+          <input type="text" class="form-control" name="CodigoPostal" id="inputCP" >
+        </div>
+        <div class="col-12">              
+            <button type="submit" id="boton" class="btn btn-primary">Guardar</button>                  
+        </div>
+      </form>
     <script src="../assets/js/jquery/jquery-3.6.1.min.js"></script>
     <script>
 //enviar la talla a la base de datos 
-            $("#enviar").on('click',function (e) {
+            $("#boton").on('click',function (e) {
                 e.preventDefault()
-                let url = 'http://10.60.63.90:4000/api/talla/'
+                //let url = 'http://10.60.63.90:4000/api/talla/'
+                let url = 'http://10.60.63.90:4000/api/registro'
                 let dato = document.getElementById('datos').value
-                console.log(dato)
+                //console.log(dato)
                 $.ajax({
                     type: "POST",
                     url: url,
                     data: JSON.stringify({
-                        Talla: dato
+                        nombres: "Julita",
+                        ApellidoP: "De",
+                        ApellidoM: "LANDA",
+                        celular:"7771234546",
+                        correo: "MAMML_96@gmail.com",
+                        Direccion: "calle 15",
+                        Estado: "Yucatan",
+                        CodigoPostal: "97500",
+                        Ciudad: "Merida"
                     }),
                     dataType: "json",
                     contentType: "application/json",
