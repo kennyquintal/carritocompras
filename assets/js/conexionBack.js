@@ -1,7 +1,7 @@
 //consultaProductos();
 //consultaUsuarios();
 //consultaCarrito();
-insertarClientes();
+//insertarClientes();
 
 function consultaProductos(){
     fetch('http://10.60.63.90:4000/api/registro/')
@@ -24,16 +24,39 @@ function consultaCarrito(){
 var enviar = document.getElementById('clienteForm');
 enviar.addEventListener('submit', function (e) {
     e.preventDefault();
-    var data = new FormData(enviar);
+    var nombres = document.getElementById("inputName4").value;
+    var ApellidoP = document.getElementById("inputLastName1").value;
+    var ApellidoM = document.getElementById("inputLastName2").value;
+    var celular = document.getElementById("inputCellPhone").value;
+    var correo = document.getElementById("inputEmail1").value;
+    var Direccion = document.getElementById("inputAddress").value;
+    var Estado = document.getElementById("inputState").value;
+    var CodigoPostal = document.getElementById("inputCP").value;
+    var Ciudad = document.getElementById("inputCity").value;
+    
+    let data = JSON.stringify({
+      Nombres: nombres,
+      ApellidoP: ApellidoP,
+      ApellidoM: ApellidoM,
+      Celular: celular,
+      Correo: correo,
+      Direccion: Direccion,
+      Estado: Estado,
+      CodigoPostal: CodigoPostal,
+      Ciudad: Ciudad
+  })
+    //var data = new FormData(enviar);
+    //console.log(data.Nombres)
     insertarClientes(data);
 });
+
 
 async function insertarClientes(data) {
    let response = await fetch('http://10.60.63.90:4000/api/registro/', {
       method: 'POST',
       body: data,
       headers: {
-        'Content-Type': 'application/json;charset=utf-8'
+        'Content-Type': 'application/json'
       },
     });
     
