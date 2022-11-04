@@ -27,7 +27,8 @@ $(document).ready(function (e) {
                Descripcion  : descripcionProducto,
                Modelo : modeloProducto,
                precio : precioProducto,
-               talla: talla
+               talla: talla,
+               importe: calcularTotal(cantidadProducto, precioProducto) 
        })
        datos.push(producto)
        console.log(JSON.parse("["+datos+"]"))
@@ -35,6 +36,17 @@ $(document).ready(function (e) {
      })
      //localStorage.setItem("producto",x)
 })
+
+/**
+ * 
+ * @param {*} cantidad cantidad de productos
+ * @param {*} precioUnitario precio unitario del producto
+ * @returns total de la compra
+ */
+ function calcularTotal(cantidad, precioUnitario) {
+     total = ((cantidad*precioUnitario))   
+     return total;
+ }
 
 function productos() {
      let plantilla =""
