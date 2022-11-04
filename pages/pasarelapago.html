@@ -45,48 +45,45 @@
           <div class="accordion-body">
             <!-- FORM DIRECCIÓN -->
             <section>
-              <form class="row g-3 needs-validation">
+              <form id="clienteForm" class="row g-3 needs-validation">
                 <div class="col-md-7">
                   <label for="inputName4" class="form-label">Nombre(s)</label>
-                  <input type="text" class="form-control" id="inputName4" placeholder="Escriba su nombre(s)" required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
+                  <input type="text" class="form-control" name="Nombres" id="inputName4" placeholder="Escriba su nombre(s)" required>
                 </div>
                 <div class="col-md-5">
                   <label for="inputCellPhone" class="form-label">Celular</label>
-                  <input type="text" class="form-control" id="inputCellPhone" placeholder="Escriba su teléfono celular" required>
+                  <input type="text" class="form-control" name="Celular" id="inputCellPhone" placeholder="Escriba su teléfono celular" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputLastName1" class="form-label">Primer Apellido</label>
-                  <input type="text" class="form-control" id="inputLastName1" placeholder="Escriba su primer apellido" required>
+                  <input type="text" class="form-control" name="ApellidoP" id="inputLastName1" placeholder="Escriba su primer apellido" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputLastName2" class="form-label">Segundo Apellido</label>
-                  <input type="text" class="form-control" id="inputLastName2" placeholder="Escriba su segundo apellido" required>
+                  <input type="text" class="form-control" name="ApellidoM" id="inputLastName2" placeholder="Escriba su segundo apellido" required>
                 </div>
                 <div class="col-md-6">
                   <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico" required>
+                  <input type="email" class="form-control" name="Correo" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico" required>
                   <div id="emailHelp" class="form-text">No compartimos sus datos personales con nadie más.</div>
                 </div>
                 <div class="col-12">
-                  <label for="inputAddress" class="form-label">Dirección Domiciliar</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese su domicilio" required>
+                  <label for="inputAddress" class="form-label">Dirección de Domicilio</label>
+                  <input type="text" class="form-control" name="Direccion" id="inputAddress" placeholder="Ingrese su domicilio" required>
                 </div>
                 <div class="col-md-4">
                   <label for="inputState" class="form-label">Estado</label>
-                  <select id="inputState" class="form-select" required>
+                  <select id="inputState" name="Estado" class="form-select" required>
                   </select>
                 </div>
                 <div class="col-md-6">
                   <label for="inputCity" class="form-label">Ciudad</label>
-                  <select id="inputCity" class="form-select" required>
+                  <select id="inputCity" name="Ciudad" class="form-select" required>
                   </select>
                 </div>
                 <div class="col-md-2">
                   <label for="inputCP" class="form-label">Código Postal</label>
-                  <input type="text" class="form-control" id="inputCP" required>
+                  <input type="text" class="form-control" name="CodigoPostal" id="inputCP" required>
                 </div>
                 <div class="col-12">              
                     <button type="submit" class="btn btn-primary">Guardar</button>                  
@@ -109,7 +106,7 @@
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
             <section>
-            <form class="row g-3">
+            <div class="row g-3">
             <div class="col-12">
               <div class="form-floating mb-3">
                 <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"  value="Roger Kenneth Quintal Ojeda">
@@ -130,7 +127,7 @@
                 <a href="#"><button type="submit" class="btn btn-primary">Confirmar Orden</button></a>
               </div>
             </div>
-            </form>
+          </div>
            </section>
           </div>
         </div>
