@@ -1,4 +1,10 @@
 let body = document.querySelector('body')
+let txtCantida= document.querySelectorAll("#inputPassword2")
+//let lbEnvio = document.getElementById("lb-envio").innerHTML
+let lbTotal = document.getElementById("lb-total")
+let total = 0
+let cantidad
+
 body.onload = function () {
     agregarProductos()
     mostrarProductosStorage()
@@ -10,12 +16,8 @@ body.onload = function () {
 /**
  * Evento de teclado en el campo donde va la cantidad de productos a elegir
  */
-let txtCantida= document.querySelectorAll("#txt-cantidad")
-let lbEnvio = document.getElementById("lb-envio").innerHTML
-let lbTotal = document.getElementById("lb-total")
-let total = 0
-let cantidad
-txtCantida.forEach(inputsText =>{
+
+/**txtCantida.forEach(inputsText =>{
     inputsText.addEventListener('keyup', function (e) {
         //let contenedor = document.getElementById("contenedor")
         let elemento = this.parentElement.parentElement
@@ -25,15 +27,12 @@ txtCantida.forEach(inputsText =>{
         cantidad = inputsText.value
         //console.log(cantidad)
         if(!cantidad ==""){
-            total = total + calcularTotal(parseInt(cantidad),parseInt(lbPrecioUnitario),parseInt(lbEnvio ))
+            total = total + calcularTotal(parseInt(cantidad),parseInt(lbPrecioUnitario))
             lbTotal.innerText = total
             console.log(total)
-        } else {
-            console.log(total - calcularTotal(parseInt(cantidad),parseInt(lbPrecioUnitario),parseInt(lbEnvio )))
-            lbTotal.innerText = total
         }
     })
-})
+})*/
 
 function agregarProductos() {
     //let productos = localStorage.getItem("productos")
@@ -46,6 +45,7 @@ function agregarProductos() {
     let plantilla =""
     datos.forEach(productos => {
        // console.log(element.ID)
+       //total = calcularTotal(parseInt(productos.Cantidad),parseInt(productos.precio))
        plantilla += `
        <div class="row">
        <div class="col-6">
@@ -74,14 +74,19 @@ function agregarProductos() {
                    <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">-->
                  </div>
                  <div class="col-auto">
-                   <p  class="card-text"><strong id="lb-precion-unitario">${productos.precio}</strong></p>
+                   <p  class="card-text"><strong id="lb-precion-unitario">${Intl.NumberFormat("en-IN").format(productos.precio)}</strong></p>
+                   <p  class="card-text text-end text-muted"><strong id="lb-precion-unitario">Sub total: ${Intl.NumberFormat("en-IN").format(productos.importe)}</strong></p>
                  </div>
            </div>
        </div>
    </div>
        `
+       total = total + productos.importe
+       //console.log(total)
     });
- contenedorCarrito.innerHTML = plantilla
+    console.log(total)
+    lbTotal.innerHTML = Intl.NumberFormat("en-IN").format(total) 
+    contenedorCarrito.innerHTML = plantilla
 }
 function mostrarProductosStorage() {
     //console.log(JSON.parse(localStorage.getItem("productos")))
@@ -90,16 +95,3 @@ function mostrarProductosStorage() {
 }
 
 
-/**
- * 
- * @param {*} cantidad cantidad de productos
- * @param {*} precioUnitario precio unitario del producto
- * @param {*} precioEnvio precio del envio de paqueteria del producto
- * @returns total de la compra
- */
-function calcularTotal(cantidad, precioUnitario, precioEnvio) {
-    cantidad = cantidad
-    let total = 0
-    total = total + ((cantidad*precioUnitario)+precioEnvio)   
-    return total;
-}
