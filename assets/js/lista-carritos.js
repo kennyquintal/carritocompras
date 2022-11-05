@@ -4,6 +4,10 @@ let txtCantida= document.querySelectorAll("#inputPassword2")
 let lbTotal = document.getElementById("lb-total")
 let total = 0
 let cantidad
+let continuar = document.getElementById('continuar')
+continuar.onclick = function () {
+  window.location.href = 'pasarelapago.html'
+}
 
 body.onload = function () {
     agregarProductos()
