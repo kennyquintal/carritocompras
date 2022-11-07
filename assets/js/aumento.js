@@ -1,7 +1,5 @@
-
 $(document).ready(function (e) {
      productos()
-     mostrarDatos()
      //eliminarStorage()
      let datos = []
      $(document).on('click','.agregar',(e)=>{
@@ -13,13 +11,6 @@ $(document).ready(function (e) {
           let precioProducto = padre.children[3].children[1].innerHTML
           let cantidadProducto = padre.children[4].value
           let talla = padre.children[5].value
-          
-          console.log(idProducto)
-          console.log(modeloProducto)
-          console.log(cantidadProducto)
-          console.log(precioProducto)
-          console.log(descripcionProducto)
-          console.log(talla)
 
           let producto = JSON.stringify({
                ID    : idProducto,
@@ -34,7 +25,6 @@ $(document).ready(function (e) {
        console.log(JSON.parse("["+datos+"]"))
        localStorage.setItem("producto",datos)
      })
-     //localStorage.setItem("producto",x)
 })
 
 /**
@@ -55,9 +45,8 @@ function productos() {
      fetch(url)
      .then(function(respuesta) {return respuesta.json()})
      .then(function (data) {
-          //console.log(typeof(data))
           /**
-           * extraemos la data y vamos aiterarla para sacar cada uno de los datos
+           * extraemos la data y vamos iterarla para sacar cada uno de los datos
            */
           data.forEach(datos => {
               // console.log(datos)
@@ -96,9 +85,6 @@ function productos() {
      })
 }
 
-function mostrarDatos() {
-     console.log(JSON.parse("["+localStorage.getItem("producto")+"]"))
-}
 function eliminarStorage() {
      localStorage.clear()
 }
