@@ -1,51 +1,22 @@
-let body = document.querySelector('body')
-let txtCantida= document.querySelectorAll("#inputPassword2")
-//let lbEnvio = document.getElementById("lb-envio").innerHTML
 let lbTotal = document.getElementById("lb-total")
 let total = 0
-let cantidad
 let continuar = document.getElementById('continuar')
 continuar.onclick = function () {
   window.location.href = 'pasarelapago.html'
 }
 
-body.onload = function () {
+$(document).ready(function () {
     agregarProductos()
-    mostrarProductosStorage()
     //localStorage.clear()
-}
-
-
-
-/**
- * Evento de teclado en el campo donde va la cantidad de productos a elegir
- */
-
-/**txtCantida.forEach(inputsText =>{
-    inputsText.addEventListener('keyup', function (e) {
-        //let contenedor = document.getElementById("contenedor")
-        let elemento = this.parentElement.parentElement
-        console.log(elemento.children[2].children[0].children[0].innerHTML)
-        let lbPrecioUnitario = elemento.children[2].children[0].children[0].innerHTML
-        //lbTotal.innerHTML =""
-        cantidad = inputsText.value
-        //console.log(cantidad)
-        if(!cantidad ==""){
-            total = total + calcularTotal(parseInt(cantidad),parseInt(lbPrecioUnitario))
-            lbTotal.innerText = total
-            console.log(total)
-        }
+    $(document).on('click', '.eliminar',(e)=> {
+      let padre = $(this)[0].activeElement.parentElement.parentElement
+      let id_producto = padre.children[0].children[0].innerHTML
     })
-})*/
+});
 
 function agregarProductos() {
-    //let productos = localStorage.getItem("productos")
-    //productos = JSON.parse(producto)
     let contenedorCarrito = document.getElementById('contenedor-carrito')
     let datos = JSON.parse("["+localStorage.getItem("producto")+"]")
-   /**  for (let i = 0; i < localStorage.length; i++) {
-        console.log(datos)
-    }*/
     let plantilla =""
     datos.forEach(productos => {
        // console.log(element.ID)
@@ -60,9 +31,10 @@ function agregarProductos() {
                  </div>
                  <div class="col-md-8">
                    <div class="card-body">
+                     <p hidden>${productos.ID}</p>
                      <h5 class="card-title">${productos.Modelo}</h5>
                      <p class="card-text">${productos.Descripcion}</p>
-                     <button class="btn btn-danger">Eliminar</button>
+                     <button class="eliminar btn btn-danger">Eliminar</button>
                    </div>
                  </div>
                </div>
@@ -86,16 +58,11 @@ function agregarProductos() {
    </div>
        `
        total = total + productos.importe
-       //console.log(total)
     });
     console.log(total)
     lbTotal.innerHTML = Intl.NumberFormat("en-IN").format(total) 
+    //$("#contenedor-carrito").html(plantilla)
     contenedorCarrito.innerHTML = plantilla
-}
-function mostrarProductosStorage() {
-    //console.log(JSON.parse(localStorage.getItem("productos")))
-    //console.log(localStorage.getItem("producto"))
-    console.log(JSON.parse("["+localStorage.getItem("producto")+"]"))
 }
 
 
